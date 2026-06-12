@@ -1,0 +1,68 @@
+filters:
+  and:
+    - folderNote == true
+formulas:
+  Untitled: ""
+  Neu: file.folder.replace(/.*\//, "")
+properties:
+  formula.Neu:
+    displayName: Card-Name
+views:
+  - type: cards
+    name: Karten 2
+    filters:
+      and:
+        - file.folder.contains("Compass")
+        - '!file.name.contains("Compass")'
+        - folderNote == true
+    order:
+      - formula.Neu
+    sort:
+      - property: file.name
+        direction: ASC
+    imageAspectRatio: 1
+    cardSize: 200
+    rowHeight: medium
+    image: note.Cover
+  - type: cards
+    name: Karten
+    filters:
+      and:
+        - file.folder.contains("Compass")
+        - '!file.name.contains("Compass")'
+        - folderNote == true
+    order:
+      - file.name
+    sort:
+      - property: file.name
+        direction: ASC
+    imageAspectRatio: 1
+    cardSize: 150
+    rowHeight: medium
+    image: note.Cover
+    imageFit: contain
+  - type: table
+    name: Tabelle
+    filters:
+      and:
+        - folderNote == true
+        - file.folder.contains("Compass")
+        - '!file.name.contains("Compass")'
+    order:
+      - file.name
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: list
+    name: Liste
+    filters:
+      and:
+        - folderNote == true
+        - '!file.name.contains("Compass")'
+        - file.folder.contains("Compass")
+    order:
+      - file.name
+    sort:
+      - property: file.name
+        direction: ASC
+    rowHeight: medium

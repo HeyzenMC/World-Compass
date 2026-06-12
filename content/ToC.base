@@ -1,0 +1,6 @@
+views:
+  - type: table
+    name: Tabelle
+    sort:
+      - property: file.name
+        direction: DESC
